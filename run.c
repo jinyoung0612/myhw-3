@@ -10,9 +10,20 @@ p_meta find_meta(p_meta *last, size_t size) {
   p_meta index = base;
   p_meta result = base;
 
+  p_meta tmp=base;
+  p_meta tsize=base;
   switch(fit_flag){
     case FIRST_FIT:
     {
+	    while(index){
+		    if(index->free==1 && index->size >= size){
+			    result=index;
+			    break;
+		    }
+		   index=index->next;
+		    
+	    }
+
       //FIRST FIT CODE
     }
     break;
@@ -20,16 +31,49 @@ p_meta find_meta(p_meta *last, size_t size) {
     case BEST_FIT:
     {
       //BEST_FIT CODE
+
+	    if(index){
+		 tsize=index->size; 
+		    
+	    }
+	    while(index){
+		    if(index->free==1 && index->size >=size &&index->size <tsize){
+		    
+			    tmp=index;
+			    tsize=tmp->size;
+			    break;
+		    }
+		    index=index->next;
+
+	    }
+	    result=tmp;
+
     }
     break;
 
     case WORST_FIT:
     {
       //WORST_FIT CODE
-    }
-    break;
+	    if(index){
+		   tsize=index->size;
+	    }
+	    while(index){
 
+		    if(index->free==1&&index->size>=size&& index->size<tsize){
+		    
+			    tmp=index;
+			    tsize=tmp->size;
+			    break;
+		    }
+
+		    index=index->next;
+	    }
+	    result=tmp;
+    }
+
+    break;
   }
+  
   return result;
 }
 
