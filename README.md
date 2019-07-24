@@ -18,7 +18,7 @@
 -Sulfuras를 제외한 모든 상품은 updateQuality method가 한 번 실행될때마다 sellIn이 1 감소한다.
 
 Aged Brie(치즈)
--sellIn이 0초과이면 quality가 1 증가한다.
+- sellIn이 0초과이면 quality가 1 증가한다.
 -sellIn이 0이하이면 quality가 2 증가한다.
 (치즈는 시간이 지날수록 숙성이 된다는 의미)
 -quality는 50을 초과할 수 없다.
