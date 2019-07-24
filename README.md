@@ -39,7 +39,7 @@ Sulfuras, Hand of Ragnaros(게임 속 전설의 아이템)
 -quality가 50보다 작으면 quality는 1씩 감소한다.
 -sellin이 0보다 같거나 작고, quality가 0보다 크면 quality는 1씩 감소한다.
 
-##Test 코드 예시
+###Test 코드 예시
 ```java
 
 @Test
@@ -58,7 +58,7 @@ Sulfuras, Hand of Ragnaros(게임 속 전설의 아이템)
     }
 
 ```
-##Refactoring 과정
+###Refactoring 과정
 1. Dirty code 분석을 통한 Test 함수 결정
 2. Test Code 작성 및 Test Case 생성
 3. Refactoring
